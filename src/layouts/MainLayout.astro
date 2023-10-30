@@ -1,0 +1,22 @@
+---
+import { SITE_TITLE, SITE_DESCRIPTION } from "@/consts";
+import BaseHead from "@/components/BaseHead.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
+---
+
+<html lang="id" class="scroll-smooth">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+  <body class="min-h-screen bg-white flex flex-col">    
+    <main class="mx-auto max-w-6xl w-full flex-1 pt-5">
+      <slot />
+    </main>
+  </body>
+</html>
